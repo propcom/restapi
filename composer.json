@@ -2,7 +2,7 @@
     "name": "propcom/restapi",
     "autoload": {
         "psr-4" : {
-            "Propcom\\RestAPI" : "src"
+            "Propcom\\RestAPI\\" : "src"
         }
     }
 }
