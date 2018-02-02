@@ -1,0 +1,19 @@
+POST /things
+title="Public Water Systems"
+
+{
+	"meta": {
+		"status": "error",
+		"code": 500,
+		"message": "Cound not create the thing",
+		"details": "There was a DB issue that meant we couldn't do it",
+	},
+	"errors": [
+		{
+			"error_code": 37,
+			"message": "Error when trying to create the thing",
+			"details": "Something about the DB error",
+			"more_info": "https://docs.api.com/error/37"
+		}
+	]
+}

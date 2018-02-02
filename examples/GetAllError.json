@@ -1,0 +1,18 @@
+GET /things
+
+{
+	"meta": {
+		"status": "error",
+		"code": 500,
+		"message": "Cound not fetch all the things",
+		"details": "There was a DB issue that meant we couldn't get things",
+	},
+	"errors": [
+		{
+			"error_code": 34,
+			"message": "Error when trying to get all the things",
+			"details": "Something about the DB error",
+			"more_info": "https://docs.api.com/error/34"
+		}
+	]
+}

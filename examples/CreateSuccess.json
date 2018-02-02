@@ -1,0 +1,18 @@
+POST /things
+title="Public Water Systems"
+
+{
+	"meta": {
+		"status": "success",
+		"code": 200,
+		"message": "Thing successfully created",
+		"details": "This was all successful",
+	},
+	"data": [
+		{
+			"id": 1234,
+			"title": "Public Water Systems",
+			"created": "1231621302"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+POST /things
+title="Non-Transient Non-Community Water System"
+
+{
+	"meta": {
+		"status": "fail",
+		"code": 400,
+		"message": "Please fix the validation issues",
+		"details": "Some validation failed",
+	},
+	"errors": [
+		{
+			"field": "title",
+			"message": "Title was too long",
+			"details": "Title has a max length of 32 characters"
+		},
+		{
+			"field": "description",
+			"message": "Title was too long",
+			"details": "Title has a max length of 32 characters"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+GET /things
+
+{
+	"meta": {
+		"status": "success",
+		"code": 200,
+		"message": "Fetched all the things",
+		"details": "This was all successful",
+		"resultset": {
+			"count": 3,
+			"total": 153,
+			"offset": 150,
+			"limit": 25
+		}
+	},
+	"data": [
+		{
+			"id": 1234,
+			"title": "Public Water Systems",
+			"created": "1231621302"
+		},
+		{
+			"id": 2351,
+			"title": "Public Schools",
+			"created": "126251302"
+		},
+		{
+			"id": 2373,
+			"title": "Public Schools",
+			"created": "126251302"
+		}
+	]
+}
