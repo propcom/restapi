@@ -2,10 +2,13 @@
 
 namespace Propcom\RestAPI\Infrastructure;
 
-use Propcom\RestAPI\Application\ToArray;
+use Propcom\RestAPI\Application\ToArrayInterface;
+use Propcom\RestAPI\Application\ToArrayTrait;
 
-class Resultset extends ToArray
+class Resultset implements ToArrayInterface
 {
+
+	use ToArrayTrait;
 
 	/**
 	 * @var int

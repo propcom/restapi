@@ -2,10 +2,13 @@
 
 namespace Propcom\RestAPI\Infrastructure;
 
-use Propcom\RestAPI\Application\ToArray;
+use Propcom\RestAPI\Application\ToArrayInterface;
+use Propcom\RestAPI\Application\ToArrayTrait;
 
-class FieldErrorDetails extends ToArray
+class FieldErrorDetails implements ToArrayInterface
 {
+
+	use ToArrayTrait;
 
 	/**
 	 * @var string

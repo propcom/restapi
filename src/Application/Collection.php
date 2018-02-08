@@ -7,6 +7,8 @@ use Propcom\RestAPI\Infrastructure\Resultset;
 class Collection implements CollectionInterface
 {
 
+	use ToArrayTrait;
+
 	/**
 	 * @var \Propcom\RestAPI\Infrastructure\Resultset
 	 */
@@ -58,17 +60,6 @@ class Collection implements CollectionInterface
 	public function getLimit(): int
 	{
 		return $this->resultset->getLimit();
-	}
-
-	public function toArray(): array
-	{
-		$array = [];
-
-		foreach ($this->data as $datum) {
-			$array[] = $datum->toArray();
-		}
-
-		return $array;
 	}
 
 }

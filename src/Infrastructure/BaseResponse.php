@@ -2,10 +2,13 @@
 
 namespace Propcom\RestAPI\Infrastructure;
 
-use Propcom\RestAPI\Application\ToArray;
+use Propcom\RestAPI\Application\ToArrayInterface;
+use Propcom\RestAPI\Application\ToArrayTrait;
 
-abstract class BaseResponse extends ToArray
+abstract class BaseResponse implements ToArrayInterface
 {
+
+	use ToArrayTrait;
 
 	/**
 	 * @var \Propcom\RestAPI\Infrastructure\Response\Meta

@@ -2,7 +2,7 @@
 
 namespace Propcom\RestAPI\Application;
 
-abstract class ToArray implements ToArrayInterface
+trait ToArrayTrait
 {
 
 	public function toArray(): array

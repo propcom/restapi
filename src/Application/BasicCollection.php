@@ -2,8 +2,10 @@
 
 namespace Propcom\RestAPI\Application;
 
-class BasicCollection extends ToArray implements CollectionInterface
+class BasicCollection implements CollectionInterface
 {
+
+	use ToArrayTrait;
 
 	/**
 	 * @var \Propcom\RestAPI\Infrastructure\Response\Resultset
