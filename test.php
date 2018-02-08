@@ -4,7 +4,9 @@ require_once('../../autoload.php');
 
 use Propcom\RestAPI\Application\BasicCollection;
 use Propcom\RestAPI\Application\Collection;
-use Propcom\RestAPI\Infrastructure\ToArray;
+use Propcom\RestAPI\Application\ToArrayInterface;
+use Propcom\RestAPI\Application\ToArrayTrait;
+
 use Propcom\RestAPI\Infrastructure\FieldErrorDetails;
 use Propcom\RestAPI\Infrastructure\ErrorDetails;
 use Propcom\RestAPI\Infrastructure\Resultset;
@@ -14,8 +16,11 @@ use Propcom\RestAPI\Infrastructure\FailResponse;
 use Propcom\RestAPI\Infrastructure\SuccessSingleResponse;
 use Propcom\RestAPI\Infrastructure\SuccessCollectionResponse;
 
-class Thing extends ToArray
+class Thing implements ToArrayInterface
 {
+
+	use ToArrayTrait;
+
 	protected $name;
 	protected $description;
 
