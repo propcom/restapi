@@ -2,6 +2,8 @@
 
 namespace Propcom\RestAPI\Infrastructure;
 
+use Propcom\RestAPI\Application\ToArray;
+
 class ErrorDetails extends ToArray
 {
 

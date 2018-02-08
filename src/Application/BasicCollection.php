@@ -2,9 +2,6 @@
 
 namespace Propcom\RestAPI\Application;
 
-use Propcom\RestAPI\Infrastructure\ToArray;
-use Propcom\RestAPI\Infrastructure\ToArrayInterface;
-
 class BasicCollection extends ToArray implements CollectionInterface
 {
 

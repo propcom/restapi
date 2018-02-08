@@ -1,6 +1,6 @@
 <?php
 
-namespace Propcom\RestAPI\Infrastructure;
+namespace Propcom\RestAPI\Application;
 
 interface ToArrayInterface
 {

@@ -2,8 +2,6 @@
 
 namespace Propcom\RestAPI\Application;
 
-use Propcom\RestAPI\Infrastructure\ToArrayInterface;
-
 interface CollectionInterface extends ToArrayInterface
 {
 

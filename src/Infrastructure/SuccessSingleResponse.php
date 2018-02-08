@@ -2,6 +2,8 @@
 
 namespace Propcom\RestAPI\Infrastructure;
 
+use Propcom\RestAPI\Application\ToArrayInterface;
+
 class SuccessSingleResponse extends BaseResponse
 {
 

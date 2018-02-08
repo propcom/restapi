@@ -3,7 +3,6 @@
 namespace Propcom\RestAPI\Application;
 
 use Propcom\RestAPI\Infrastructure\Resultset;
-use Propcom\RestAPI\Infrastructure\ToArrayInterface;
 
 class Collection implements CollectionInterface
 {
