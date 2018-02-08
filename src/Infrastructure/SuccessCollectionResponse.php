@@ -16,7 +16,7 @@ class SuccessCollectionResponse extends BaseResponse
 	{
 		$this->data = $data;
 
-		$meta = new Meta('success', $code, $message, $details);
+		$meta = new CollectionMeta('success', $code, $message, $details);
 
 		if ($data instanceof Collection) {
 			$meta->setResultset($data->getResultset());
