@@ -7,7 +7,9 @@ use Propcom\RestAPI\Infrastructure\Resultset;
 class Collection implements CollectionInterface
 {
 
-	use ToArrayTrait;
+	use ToArrayTrait {
+		toArray as defaultToArray;
+	}
 
 	/**
 	 * @var \Propcom\RestAPI\Infrastructure\Resultset
@@ -60,6 +62,15 @@ class Collection implements CollectionInterface
 	public function getLimit(): int
 	{
 		return $this->resultset->getLimit();
+	}
+
+	public function toArray(): array
+	{
+		$array = $this->defaultToArray();
+
+		unset($array['resultset']);
+
+		return $array;
 	}
 
 }

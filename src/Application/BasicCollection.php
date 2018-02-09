@@ -8,11 +8,6 @@ class BasicCollection implements CollectionInterface
 	use ToArrayTrait;
 
 	/**
-	 * @var \Propcom\RestAPI\Infrastructure\Response\Resultset
-	 */
-	protected $resultset;
-
-	/**
 	 * @var \Propcom\RestAPI\Infrastructure\Response\PartInterface[]
 	 */
 	protected $data = [];
