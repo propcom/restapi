@@ -5,7 +5,7 @@ namespace Propcom\RestAPI\Infrastructure;
 use Propcom\RestAPI\Application\ToArrayInterface;
 use Propcom\RestAPI\Application\ToArrayTrait;
 
-class FieldErrorDetails implements ToArrayInterface
+class FailDetails implements ToArrayInterface
 {
 
 	use ToArrayTrait;

@@ -17,12 +17,7 @@ class FailResponse extends BaseResponse
 		parent::__construct($meta);
 	}
 
-	public function addError(ErrorDetails $error)
-	{
-		array_push($this->errors, $error);
-	}
-
-	public function addFieldError(FieldErrorDetails $error)
+	public function addError(FailDetails $error)
 	{
 		array_push($this->errors, $error);
 	}

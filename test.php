@@ -7,7 +7,7 @@ use Propcom\RestAPI\Application\Collection;
 use Propcom\RestAPI\Application\ToArrayInterface;
 use Propcom\RestAPI\Application\ToArrayTrait;
 
-use Propcom\RestAPI\Infrastructure\FieldErrorDetails;
+use Propcom\RestAPI\Infrastructure\FailDetails;
 use Propcom\RestAPI\Infrastructure\ErrorDetails;
 use Propcom\RestAPI\Infrastructure\Resultset;
 
@@ -57,20 +57,20 @@ echo json_encode($error->toArray(), JSON_PRETTY_PRINT);
 echo "\n\nFail\n";
 
 $fail = new FailResponse('Validation failed', 422, 'The data passed needs to be fixed up');
-$fail->addFieldError(
-	new FieldErrorDetails(
+$fail->addError(
+	new FailDetails(
 		'title',
 		'Title is required'
 	)
 );
-$fail->addFieldError(
-	new FieldErrorDetails(
+$fail->addError(
+	new FailDetails(
 		'description',
 		'Description should only contain letters and numbers'
 	)
 );
-$fail->addFieldError(
-	new FieldErrorDetails(
+$fail->addError(
+	new FailDetails(
 		'description',
 		'Description must be at least 10 characters'
 	)
