@@ -35,11 +35,7 @@ trait ToArrayTrait
 				if ($value instanceof ToArrayInterface) {
 					return $value->toArray();
 				}
-				throw new \UnexpectedValueException(
-					'Objects must implement the 
-					\Propcom\RestAPI\Application\ToArrayInterface to be 
-					converted to array'
-				);
+				throw new \UnexpectedValueException('Objects must implement ' . ToArrayInterface::class);
 
 			default:
 				throw new \UnexpectedValueException("Value of type '{$type}' can not be converted");
