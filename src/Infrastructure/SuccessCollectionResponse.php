@@ -18,18 +18,14 @@ class SuccessCollectionResponse extends BaseResponse
 
 		$meta = new CollectionMeta('success', $code, $message, $details);
 
-		if ($data instanceof Collection) {
-			$meta->setResultset($data->getResultset());
-		} else {
-			$meta->setResultset(
-				new Resultset(
-					$this->data->getCount(),
-					$this->data->getTotal(),
-					$this->data->getOffset(),
-					$this->data->getLimit()
-				)
-			);
-		}
+		$meta->setResultset(
+			new Resultset(
+				$this->data->getCount(),
+				$this->data->getTotal(),
+				$this->data->getOffset(),
+				$this->data->getLimit()
+			)
+		);
 
 		parent::__construct($meta);
 	}
