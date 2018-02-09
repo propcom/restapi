@@ -15,24 +15,34 @@ trait ToArrayTrait
 	 */
 	public function toArray(): array
 	{
-		$array = get_object_vars($this);
+		return array_map([$this, 'toArrayValue'], get_object_vars($this));
+	}
 
-		foreach ($array as $key => $value) {
-			if (is_array($value)) {
-				foreach ($value as $subkey => $subvalue) {
-					$array[$key][$subkey] = $subvalue->toArray();
+	public function toArrayValue($value)
+	{
+		switch ($type = gettype($value)) {
+			case 'boolean':
+			case 'integer':
+			case 'float':
+			case 'string':
+			case 'NULL':
+				return $value;
+
+			case 'array':
+				return array_map([$this, 'toArrayValue'], $value);
+
+			case 'object':
+				if ($value instanceof ToArrayInterface) {
+					return $value->toArray();
 				}
-			} elseif ($value instanceof ToArrayInterface) {
-				$array[$key] = $value->toArray();
-			} elseif (is_object($value)) {
 				throw new \UnexpectedValueException(
 					'Objects must implement the 
 					\Propcom\RestAPI\Application\ToArrayInterface to be 
 					converted to array'
 				);
-			}
-		}
 
-		return $array;
+			default:
+				throw new \UnexpectedValueException("Value of type '{$type}' can not be converted");
+		}
 	}
 }

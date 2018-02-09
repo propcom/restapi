@@ -23,6 +23,7 @@ class Thing implements ToArrayInterface
 
 	protected $name;
 	protected $description;
+	protected $ids = [1,2];
 
 	public function __construct($name, $description)
 	{
