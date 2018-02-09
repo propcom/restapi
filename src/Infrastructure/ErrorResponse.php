@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -10,7 +11,7 @@ class ErrorResponse extends BaseResponse
 	 */
 	protected $errors = [];
 
-	public function __construct($message, $code = 200, $details = null)
+	public function __construct(string $message, int $code = 200, string $details = null)
 	{
 		$meta = new Meta('error', $code, $message, $details);
 

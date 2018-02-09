@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -11,7 +12,7 @@ abstract class BaseResponse implements ToArrayInterface
 	use ToArrayTrait;
 
 	/**
-	 * @var \Propcom\RestAPI\Infrastructure\Response\Meta
+	 * @var \Propcom\RestAPI\Infrastructure\Meta
 	 */
 	protected $meta;
 

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -30,7 +31,7 @@ class ErrorDetails implements ToArrayInterface
 	 */
 	protected $more_info;
 
-	public function __construct(string $error_code, string $message, string $details = null, string $more_info = null)
+	public function __construct(string $error_code, string $message, string $details = '', string $more_info = '')
 	{
 		$this->error_code = $error_code;
 		$this->message = $message;

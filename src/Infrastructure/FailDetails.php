@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -30,7 +31,7 @@ class FailDetails implements ToArrayInterface
 	 */
 	protected $more_info;
 
-	public function __construct(string $field, string $message, string $details = null, string $more_info = null)
+	public function __construct(string $field, string $message, string $details = '', string $more_info = '')
 	{
 		$this->field = $field;
 		$this->message = $message;

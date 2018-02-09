@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Application;
 
@@ -8,7 +9,7 @@ class BasicCollection implements CollectionInterface
 	use ToArrayTrait;
 
 	/**
-	 * @var \Propcom\RestAPI\Infrastructure\Response\PartInterface[]
+	 * @var \Propcom\RestAPI\Application\ToArrayInterface[]
 	 */
 	protected $data = [];
 
@@ -48,5 +49,4 @@ class BasicCollection implements CollectionInterface
 	{
 		return $this->getCount();
 	}
-
 }

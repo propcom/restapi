@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -8,11 +9,11 @@ class SuccessCollectionResponse extends BaseResponse
 {
 
 	/**
-	 * @var array
+	 * @var \Propcom\RestAPI\Application\CollectionInterface
 	 */
 	protected $data;
 
-	public function __construct(CollectionInterface $data, $message, $details = null, $code = 200)
+	public function __construct(CollectionInterface $data, string $message, string $details = '', int $code = 200)
 	{
 		$this->data = $data;
 

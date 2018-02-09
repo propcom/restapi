@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Application;
 
@@ -17,7 +18,7 @@ class Collection implements CollectionInterface
 	protected $resultset;
 
 	/**
-	 * @var \Propcom\RestAPI\Infrastructure\ToArrayInterface[]
+	 * @var \Propcom\RestAPI\Application\ToArrayInterface[]
 	 */
 	protected $data = [];
 
@@ -72,5 +73,4 @@ class Collection implements CollectionInterface
 
 		return $array;
 	}
-
 }

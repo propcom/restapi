@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Propcom\RestAPI\Infrastructure;
 
@@ -8,11 +9,11 @@ class SuccessSingleResponse extends BaseResponse
 {
 
 	/**
-	 * @var array
+	 * @var ToArrayInterface
 	 */
 	protected $data;
 
-	public function __construct(ToArrayInterface $data, $message, $code = 200, $details = null)
+	public function __construct(ToArrayInterface $data, string $message, int $code = 200, string $details = '')
 	{
 		$this->data = $data;
 
