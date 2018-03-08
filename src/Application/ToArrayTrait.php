@@ -32,6 +32,11 @@ trait ToArrayTrait
 				return array_map([$this, 'toArrayValue'], $value);
 
 			case 'object':
+				if ($value instanceof \DateTimeInterface) {
+					// ISO 8601 date format (2004-02-12T15:19:21+00:00)
+					return $value->format('c');
+				}
+
 				if ($value instanceof ToArrayInterface) {
 					return $value->toArray();
 				}
