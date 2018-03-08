@@ -11,7 +11,7 @@ class FailResponse extends BaseResponse
 	 */
 	protected $errors = [];
 
-	public function __construct(string $message, int $code = 200, string $details = null)
+	public function __construct(string $message, int $code = 200, string $details = '')
 	{
 		$meta = new Meta('fail', $code, $message, $details);
 
