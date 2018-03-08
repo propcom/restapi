@@ -3,7 +3,10 @@ declare(strict_types=1);
 
 namespace Propcom\RestAPI\Application;
 
-class BasicCollection implements CollectionInterface
+use Propcom\RestAPI\Infrastructure\ToArray;
+use Propcom\RestAPI\Infrastructure\ToArrayInterface;
+
+class BasicCollection extends ToArray implements CollectionInterface, \Countable, \IteratorAggregate
 {
 
 	use ToArrayTrait;
@@ -35,6 +38,11 @@ class BasicCollection implements CollectionInterface
 		return count($this->items);
 	}
 
+	public function count()
+	{
+		return $this->getCount();
+	}
+
 	public function getTotal(): int
 	{
 		return $this->getCount();
@@ -48,5 +56,10 @@ class BasicCollection implements CollectionInterface
 	public function getLimit(): int
 	{
 		return $this->getCount();
+	}
+
+	public function getIterator()
+	{
+		return new \ArrayIterator($this->items);
 	}
 }
