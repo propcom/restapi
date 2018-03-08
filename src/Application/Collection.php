@@ -20,24 +20,24 @@ class Collection implements CollectionInterface
 	/**
 	 * @var \Propcom\RestAPI\Application\ToArrayInterface[]
 	 */
-	protected $data = [];
+	protected $items = [];
 
-	public function __construct(Resultset $resultset, array $data = [])
+	public function __construct(Resultset $resultset, array $items = [])
 	{
 		$this->resultset = $resultset;
-		foreach ($data as $datum) {
-			$this->addData($datum);
+		foreach ($items as $item) {
+			$this->addItem($item);
 		}
 	}
 
-	public function addData(ToArrayInterface $data)
+	public function addItem(ToArrayInterface $item)
 	{
-		array_push($this->data, $data);
+		array_push($this->items, $item);
 	}
 
-	public function getData(): array
+	public function getItems(): array
 	{
-		return $this->data;
+		return $this->items;
 	}
 
 	public function getResultset(): Resultset
