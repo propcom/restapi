@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace Propcom\RestAPI\Application;
 
-use Propcom\RestAPI\Infrastructure\ToArray;
-use Propcom\RestAPI\Infrastructure\ToArrayInterface;
+use Propcom\RestAPI\Application\ToArrayInterface;
 
-class BasicCollection extends ToArray implements CollectionInterface, \Countable, \IteratorAggregate
+class BasicCollection implements CollectionInterface, \Countable, \IteratorAggregate
 {
 
 	use ToArrayTrait;
