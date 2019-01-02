@@ -24,6 +24,7 @@ trait ToArrayTrait
 			case 'boolean':
 			case 'integer':
 			case 'float':
+			case 'double':
 			case 'string':
 			case 'NULL':
 				return $value;
